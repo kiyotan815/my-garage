@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Button from '@material-ui/core/Button';
+
+
 export default class HelloWorld extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
+
 
   /**
    * @param props - Comes from your rails view.
@@ -38,6 +42,9 @@ export default class HelloWorld extends React.Component {
             value={this.state.name}
             onChange={(e) => this.updateName(e.target.value)}
           />
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
         </form>
       </div>
     );
